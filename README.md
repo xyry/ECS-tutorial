@@ -1,7 +1,4 @@
-# ECS-tutorial
- 服务器使用指南
-
-## 服务器使用说明
+# 服务器使用说明
 
 1. 数据集统一下载到/home/data
 
@@ -40,9 +37,35 @@
 
 6. 若遇到xshell连上主机没有反应，可以尝试删除会话，重新新建一个会话
 
-7. 使用wget 或者git clone速度很慢，在指令前面加上proxychains4，
-
-   > 自己掏钱搞的代理，不要外传
+7. 使用wget 或者git clone速度很慢，在指令前面加上proxychains4，conda需要自己手动添加清华源
 
 8. 服务器IP地址不要外传
+
+## 下载的数据集 /home/data
+
+1. pascal_voc 2012 
+
+   > ```shell
+   > http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+   > ```
+   >
+   > 解压完VOCdevkit，其中包含
+   >
+   > 1. Annotations
+   > 2. ImageSets
+   > 3. JPEGImages
+   > 4. SegmentationClass
+   > 5. SegmentationObject
+
+2. cifar-100
+
+   > 开源项目pytorch-cifar100项目用的数据集
+
+3. voc12_aug
+
+   > - DUnet
+
+4. caffe-ilsvrc12
+
+   >- GhostNet
 
