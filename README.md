@@ -37,8 +37,6 @@
 
 6. 若遇到xshell连上主机没有反应，可以尝试删除会话，重新新建一个会话
 
-7. 使用wget 或者git clone速度很慢，在指令前面加上proxychains4，conda需要自己手动添加清华源
-
 8. 服务器IP地址不要外传
 
 ## 下载的数据集 /home/data
@@ -68,4 +66,67 @@
 4. caffe-ilsvrc12
 
    >- GhostNet
+
+## 工具及其使用方法
+
+### proxychains
+
+使用wget 或者git clone速度很慢，在指令前面加上proxychains4，conda需要自己手动添加清华源
+
+### xftp(推荐)
+
+上传下载文件
+
+### lrzsz（未安装）
+
+上传下载文件
+
+### tree
+
+树形展开文件夹
+
+``` 
+(base) ypl:~/cpp-export$ tree -L 1
+.
+├── CMakeLists.txt
+├── example-app.cpp
+├── libtorch
+└── libtorch-cxx11-abi-shared-with-deps-1.4.0.zip
+
+
+```
+
+### CUDA及cudnn版本
+
+CUDA10.2
+
+cudnn7.6.5
+
+### 将终端输出追加到文件
+
+1. 考虑到模型一般会跑很久，我们没有办法一直在电脑前面盯着输出，所以可以将输出追加到指定文件，举例
+
+```shell
+touch record.txt
+python train.py >> record.txt
+```
+
+缺点，有时候不成功
+
+2. logger
+
+直接看代码
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='test.log',
+                    filemode='a',
+                    format='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s')
+a=1
+logger=logging.getLogger('test')
+stream_handler=logging.StreamHandler()
+logger.addHandler(stream_handler)
+logger.debug(a+1)
+```
 
