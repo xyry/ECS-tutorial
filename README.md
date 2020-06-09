@@ -69,7 +69,7 @@
 
 ## 工具及其使用方法
 
-### proxychains
+### proxychains（未安装）
 
 使用wget 或者git clone速度很慢，在指令前面加上proxychains4，conda需要自己手动添加清华源
 
